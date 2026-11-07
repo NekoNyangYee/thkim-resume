@@ -138,6 +138,7 @@ export const projects: Project[] = [
       { title: '무료·무제한 제공을 목표로', description: '비용이나 사용 횟수 제한 때문에 문서 작업을 중단하지 않아도 되는 도구를 지향합니다. OCR의 추출 한계는 개발을 시작한 배경 중 하나이며, 현재 버전은 스캔된 글자의 OCR을 지원하지 않습니다.' },
     ],
     screenshots: [
+      { src: '/projects/paperkit/screen-home.png', title: '문서 열기', caption: 'PDF를 창에 끌어 놓거나 파일 선택으로 여는 앱 시작 화면입니다. 문서를 연 뒤 페이지 탐색과 직접 편집으로 이어집니다.', width: 1202, height: 802 },
       { src: '/projects/paperkit/screen-editor.png', title: 'PDF 직접 편집', caption: '페이지 미리보기로 문서를 탐색하고, 본문의 텍스트 블록을 선택해 직접 수정하는 편집 화면입니다. 상단 도구에서 이미지 삽입과 워터마크·전자서명 기능으로 이어집니다.', width: 1202, height: 802 },
       { src: '/projects/paperkit/screen-watermark.png', title: '워터마크 설정과 미리보기', caption: '텍스트 또는 이미지 워터마크를 선택하고 날짜·투명도·크기·각도·적용 범위를 조절합니다. 적용 전 문서 위의 결과를 미리 확인할 수 있습니다.', width: 1202, height: 802 },
       { src: '/projects/paperkit/screen-signature.png', title: '전자서명 그리기', caption: '마우스·터치·펜으로 서명을 그려 현재 페이지에 삽입하는 화면입니다. 생성한 서명은 문서 위에서 위치와 크기를 조절할 수 있습니다.', width: 1202, height: 802 },

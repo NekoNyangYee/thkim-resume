@@ -6,7 +6,7 @@
 
 썸네일 입력: public/projects/paperkit/screen-home.png — 실행 중인 Paperkit 앱의 실제 시작 화면입니다. 카드용 생성 목업의 원본으로 유지합니다.
 
-상세 페이지 스크린샷: 사용자가 첨부한 편집 화면·워터마크·전자서명 원본 3장입니다. 각각 public/projects/paperkit/screen-editor.png, screen-watermark.png, screen-signature.png로 저장했습니다.
+상세 페이지 스크린샷: 기존 시작 화면(screen-home.png)을 첫 번째로 배치하고, 사용자가 첨부한 편집 화면·워터마크·전자서명 원본 3장을 이어 배치했습니다. 첨부 원본은 각각 public/projects/paperkit/screen-editor.png, screen-watermark.png, screen-signature.png로 저장했습니다. 총 4장입니다.
 
 최종 프롬프트:
 
