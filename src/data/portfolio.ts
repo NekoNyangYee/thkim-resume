@@ -109,7 +109,7 @@ export const projects: Project[] = [
     subtitle: '문서 변환 없이 직접 수정하는 PDF 편집기',
     image: '/projects/paperkit/thumbnail.png',
     imageAlt: 'Paperkit — 문서 변환 없이, PDF를 바로 편집. 짙은 초록색 배경과 실제 앱 시작 화면을 담은 모니터 목업',
-    period: '개발·개선 중',
+    period: '2026.10 — 현재',
     context: '개인 프로젝트 · 기획·설계·개발',
     summary: 'PDF를 다른 문서 형식으로 변환하지 않고 텍스트·이미지를 직접 수정하는 Windows 앱입니다. 문서 처리는 서버 업로드 없이 로컬에서 수행합니다.',
     description: '텍스트·이미지·도형을 페이지 위에서 직접 수정하고, 워터마크와 서명을 추가하는 Windows용 PDF 편집기입니다. React 기반 편집 화면과 Rust·PDFium 기반 엔진을 연결했으며, 원본을 보호하면서 편집 결과를 새 PDF로 저장하도록 구성했습니다.',
@@ -138,7 +138,9 @@ export const projects: Project[] = [
       { title: '무료·무제한 제공을 목표로', description: '비용이나 사용 횟수 제한 때문에 문서 작업을 중단하지 않아도 되는 도구를 지향합니다. OCR의 추출 한계는 개발을 시작한 배경 중 하나이며, 현재 버전은 스캔된 글자의 OCR을 지원하지 않습니다.' },
     ],
     screenshots: [
-      { src: '/projects/paperkit/screen-home.png', title: '문서 열기', caption: 'PDF를 창에 끌어 놓거나 파일 선택으로 여는 실제 앱 시작 화면입니다. 문서를 연 뒤 페이지 탐색과 직접 편집으로 이어집니다.', width: 1202, height: 802 },
+      { src: '/projects/paperkit/screen-editor.png', title: 'PDF 직접 편집', caption: '페이지 미리보기로 문서를 탐색하고, 본문의 텍스트 블록을 선택해 직접 수정하는 편집 화면입니다. 상단 도구에서 이미지 삽입과 워터마크·전자서명 기능으로 이어집니다.', width: 1202, height: 802 },
+      { src: '/projects/paperkit/screen-watermark.png', title: '워터마크 설정과 미리보기', caption: '텍스트 또는 이미지 워터마크를 선택하고 날짜·투명도·크기·각도·적용 범위를 조절합니다. 적용 전 문서 위의 결과를 미리 확인할 수 있습니다.', width: 1202, height: 802 },
+      { src: '/projects/paperkit/screen-signature.png', title: '전자서명 그리기', caption: '마우스·터치·펜으로 서명을 그려 현재 페이지에 삽입하는 화면입니다. 생성한 서명은 문서 위에서 위치와 크기를 조절할 수 있습니다.', width: 1202, height: 802 },
     ],
     links: [
       { label: 'GitHub 저장소', url: 'https://github.com/NekoNyangYee/Paperkit' },

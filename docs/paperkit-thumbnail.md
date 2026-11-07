@@ -4,7 +4,9 @@
 
 적용 파일: public/projects/paperkit/thumbnail.png
 
-입력: public/projects/paperkit/screen-home.png — 실행 중인 Paperkit 앱의 실제 시작 화면입니다. 상세 페이지의 화면 원본과 카드용 생성 목업은 구분합니다.
+썸네일 입력: public/projects/paperkit/screen-home.png — 실행 중인 Paperkit 앱의 실제 시작 화면입니다. 카드용 생성 목업의 원본으로 유지합니다.
+
+상세 페이지 스크린샷: 사용자가 첨부한 편집 화면·워터마크·전자서명 원본 3장입니다. 각각 public/projects/paperkit/screen-editor.png, screen-watermark.png, screen-signature.png로 저장했습니다.
 
 최종 프롬프트:
 
@@ -20,4 +22,4 @@ Keep the real app screen recognizable and do not claim OCR, AI editing, or free 
 - 개발 배경과 무료·무제한 제공 목표: 사용자가 전달한 경험과 개발 방향. 유료 서비스의 시장 비율은 주장하지 않습니다.
 - 구현 기능과 한계: https://github.com/NekoNyangYee/Paperkit 의 README.md, ARCHITECTURE.md, crates/pdf-core/README.md, .github/releases/README.md 및 apps/desktop/package.json (2026-11-08 확인).
 - OCR은 개발 동기이며 현재 지원 기능이 아닙니다. PDFium 기반 엔진으로, PDFium 자체를 새로 구현한 것으로 표현하지 않습니다.
-- 정확한 개발 시작일은 전달되지 않아 기간은 ‘개발·개선 중’으로 표시합니다.
+- 개발 기간은 사용자가 확인한 ‘2026.10 — 현재’로 표시합니다.
