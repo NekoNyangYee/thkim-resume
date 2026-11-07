@@ -51,9 +51,9 @@ npm run preview
 - src/data/portfolio.ts: 교체할 콘텐츠
 - docs/portfolio-research.md: 초기 조사 자료
 
-React 19 / TypeScript / Vite 기반입니다. 외부 배포는 진행하지 않았습니다.
+React 19 / TypeScript / Vite 기반입니다. 배포 주소: https://thkim-resume.vercel.app
 
 ## 상세 주소 배포 설정
 
-페이지 이동은 일반 링크로 이루어집니다. Vite 개발 서버와 `npm run preview`에서는 상세 주소 직접 접속과 새로고침을 지원합니다. 추후 정적 호스팅에 배포할 때는 `/projects/*` 요청도 `index.html`로 연결하는 SPA fallback 설정이 필요합니다.
+페이지 이동은 일반 링크로 이루어집니다. Vite 개발 서버와 `npm run preview`에서는 상세 주소 직접 접속과 새로고침을 지원합니다. Vercel은 루트의 `vercel.json`에 SPA rewrite를 설정해 `/projects/secupipeline` 직접 접속·새로고침도 `index.html`을 통해 처리합니다. 이미지·PDF·JS·CSS 같은 정적 파일은 해당 파일로 제공됩니다.
 
