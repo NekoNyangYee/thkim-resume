@@ -16,8 +16,9 @@ export type Project = {
   technologyGroups?: { category: string; items: string[] }[]
   contributions: { title: string; description: string }[]
   contributionsHeading?: string
+  featuresHeading?: string
   features?: { title: string; description: string }[]
-  screenshots?: { src: string; title: string; caption: string }[]
+  screenshots?: { src: string; title: string; caption: string; width?: number; height?: number }[]
   links: PortfolioLink[]
 }
 
@@ -88,6 +89,7 @@ export const projects: Project[] = [
       { title: '사용자별 실행 이력과 로그 저장', description: '실행 이력과 단계별 로그를 PostgreSQL에 저장하고, 사용자별 조회 API와 대시보드를 구현했습니다. 저장소 검색과 페이지 단위 조회를 지원하며, 앱을 다시 실행해도 이전 작업의 진행 상태와 결과를 확인할 수 있도록 구성했습니다.' },
       { title: '중복 로그 처리와 파이프라인 상태 안정화', description: '콜백 재전송에 따른 로그 중복 저장과 짧은 로그가 기존 내용을 덮어쓰는 문제를 방지했습니다. 엔진 시작 지연과 장시간 응답 중단을 감지해 실패 처리하고, 늦게 도착한 이벤트가 이미 종료된 작업의 상태를 변경하지 않도록 개선했습니다.' },
     ],
+    featuresHeading: '팀에서 완성한 서비스',
     features: [
       { title: '보안 분석과 배포 승인', description: '서비스는 위험도별 취약점 목록과 보안 점수, 차트를 제공하며, 결과 확인 이후 배포 승인과 보고서 내보내기로 이어집니다.' },
       { title: '실행 상태와 예외 상황 안내', description: '동일한 저장소·브랜치의 중복 실행을 안내하고 기존 작업 화면으로 이동할 수 있습니다. 필수 입력 검증, 요청 중 실행 버튼 비활성화, 로딩·오류 표시와 인증 만료 시 재로그인 안내를 제공합니다.' },
@@ -100,6 +102,48 @@ export const projects: Project[] = [
       { src: '/projects/secupipeline/screen-security.png', title: '보안 분석과 배포 판단', caption: '위험도별 취약점과 보안 점수, 배포 게이트의 차단 사유를 함께 보여주는 분석 결과 화면입니다.' },
     ],
     links: [],
+  },
+  {
+    slug: 'paperkit',
+    name: 'Paperkit',
+    subtitle: '문서 변환 없이 직접 수정하는 PDF 편집기',
+    image: '/projects/paperkit/thumbnail.png',
+    imageAlt: 'Paperkit — 문서 변환 없이, PDF를 바로 편집. 짙은 초록색 배경과 실제 앱 시작 화면을 담은 모니터 목업',
+    period: '개발·개선 중',
+    context: '개인 프로젝트 · 기획·설계·개발',
+    summary: 'PDF를 다른 문서 형식으로 변환하지 않고 텍스트·이미지를 직접 수정하는 Windows 앱입니다. 문서 처리는 서버 업로드 없이 로컬에서 수행합니다.',
+    description: '텍스트·이미지·도형을 페이지 위에서 직접 수정하고, 워터마크와 서명을 추가하는 Windows용 PDF 편집기입니다. React 기반 편집 화면과 Rust·PDFium 기반 엔진을 연결했으며, 원본을 보호하면서 편집 결과를 새 PDF로 저장하도록 구성했습니다.',
+    background: {
+      problem: '흐리거나 훼손된 글씨, 이미지 속 글자는 OCR로 정확히 추출하기 어려웠습니다. PDF를 한글·Word로 변환하면 글꼴과 배치가 깨지는 경우가 있었고, 편집 서비스를 이용할 때도 유료 기능과 무료 사용 횟수 제한이 걸림돌이었습니다.',
+      approach: '문서 변환에 따른 서식 손상을 줄이기 위해 PDF를 원본 형식에서 직접 수정하는 Paperkit을 개발했습니다. 비용과 사용 횟수에 구애받지 않는 편집 도구를 목표로, 현재는 로컬 환경의 직접 편집 기능을 중심으로 개선하고 있습니다.',
+    },
+    technologies: ['React', 'TypeScript', 'Tauri', 'Rust'],
+    technologyGroups: [
+      { category: '프론트엔드', items: ['React', 'TypeScript', 'Zustand', 'Tailwind CSS', 'Radix UI'] },
+      { category: '데스크톱·PDF 엔진', items: ['Tauri', 'Rust', 'PDFium'] },
+      { category: '개발·검증·배포', items: ['Vite', 'Vitest', 'Cargo', 'GitHub Actions'] },
+    ],
+    contributionsHeading: '주요 작업',
+    contributions: [
+      { title: 'Tauri 기반 문서 편집 화면', description: 'React와 TypeScript로 파일 열기, 페이지 탐색, 객체 선택과 편집 도구를 구성했습니다. Zustand로 문서 탭을 관리하고, 앱을 다시 실행해도 탭 목록과 페이지·확대 상태를 복원하도록 구현했습니다.' },
+      { title: 'Rust 기반 PDF 편집 엔진', description: 'PDFium을 기반으로 렌더링·텍스트 추출·편집을 담당하는 Paperframe 엔진을 구성했습니다. 엔진을 Tauri와 분리하고, 전용 워커에서 문서 핸들과 요청을 관리해 화면과 PDF 처리의 책임을 나눴습니다.' },
+      { title: '텍스트 직접 편집과 문단 재배치', description: '페이지의 텍스트를 직접 선택해 수정하고 글꼴·정렬·줄바꿈 폭을 조절하도록 구현했습니다. 문단이 길어지면 같은 열의 아래 객체를 이동시키며, PDF 내장 글꼴과 설치된 글꼴을 활용하도록 구성했습니다.' },
+      { title: '편집 결과 검증과 원본 보호', description: '편집 명령마다 후보 PDF를 만들고 내용·서식 보존 여부와 다시 열기 성공을 확인한 뒤 문서 상태를 교체했습니다. 검증에 실패하면 기존 문서와 이력을 유지하며, 실행 취소·다시 실행과 새 파일 저장을 지원합니다.' },
+      { title: '워터마크와 전자서명', description: '텍스트·이미지 워터마크의 투명도·크기·각도를 미리 확인하고 현재 또는 전체 페이지에 적용하도록 구현했습니다. 직접 그린 서명은 투명 이미지로 만들어 이동·크기 조절이 가능하도록 연결했습니다.' },
+      { title: '검증부터 Windows 릴리스까지', description: 'GitHub Actions에서 프론트엔드와 Rust 테스트, Windows 설치 파일 빌드를 수행하도록 구성했습니다. 검증을 통과한 버전의 설치 파일과 체크섬을 게시하고, 앱에서 새 릴리스를 확인하도록 연결했습니다.' },
+    ],
+    featuresHeading: '현재 지원 범위와 개선 방향',
+    features: [
+      { title: '로컬에서 처리하는 PDF 직접 편집', description: 'PDF 열기·편집·렌더링은 사용자 컴퓨터에서 처리합니다. 텍스트와 이미지 편집, 워터마크·서명, 실행 취소·다시 실행을 지원하며, 문서 구조와 내장 글꼴에 따라 편집 가능한 범위에는 차이가 있습니다.' },
+      { title: '무료·무제한 제공을 목표로', description: '비용이나 사용 횟수 제한 때문에 문서 작업을 중단하지 않아도 되는 도구를 지향합니다. OCR의 추출 한계는 개발을 시작한 배경 중 하나이며, 현재 버전은 스캔된 글자의 OCR을 지원하지 않습니다.' },
+    ],
+    screenshots: [
+      { src: '/projects/paperkit/screen-home.png', title: '문서 열기', caption: 'PDF를 창에 끌어 놓거나 파일 선택으로 여는 실제 앱 시작 화면입니다. 문서를 연 뒤 페이지 탐색과 직접 편집으로 이어집니다.', width: 1202, height: 802 },
+    ],
+    links: [
+      { label: 'GitHub 저장소', url: 'https://github.com/NekoNyangYee/Paperkit' },
+      { label: 'Windows 앱 다운로드', url: 'https://github.com/NekoNyangYee/Paperkit/releases/latest' },
+    ],
   },
 ]
 

@@ -174,11 +174,11 @@ function ProjectPage({ project }: { project: Project }) {
           {project.background && <section className="detail-section project-background"><h2>개발 배경</h2><p>{project.background.problem}</p><p>{project.background.approach}</p></section>}
           {project.contributionsHeading ? <section className="detail-section"><h2>{project.contributionsHeading}</h2><div className="project-work-grid">{project.contributions.map(contribution => <section className="project-work-card" key={contribution.title}><h3>{contribution.title}</h3><p>{contribution.description}</p></section>)}</div></section> : <div className="project-story">{project.contributions.map(contribution => <section className="detail-section" key={contribution.title}><h2>{contribution.title}</h2><p>{contribution.description}</p></section>)}</div>}
           {project.technologyGroups && <section className="detail-section"><h2>사용 기술</h2><dl className="project-technology-groups">{project.technologyGroups.map(group => <div key={group.category}><dt>{group.category}</dt><dd><TechnologyList items={group.items} /></dd></div>)}</dl></section>}
-          {project.features && <section className="detail-section"><h2>팀에서 완성한 서비스</h2>{project.features.map(feature => <section className="project-subsection" key={feature.title}><h3>{feature.title}</h3><p>{feature.description}</p></section>)}</section>}
+          {project.features && <section className="detail-section"><h2>{project.featuresHeading || '주요 기능'}</h2>{project.features.map(feature => <section className="project-subsection" key={feature.title}><h3>{feature.title}</h3><p>{feature.description}</p></section>)}</section>}
           {project.screenshots && <section className="detail-section" id="screenshots" aria-labelledby="screenshots-title">
             <h2 id="screenshots-title">화면 미리보기</h2>
             <div className="project-screenshots">{project.screenshots.map(screenshot => <figure className="project-screenshot" key={screenshot.src}>
-              <a className="screenshot-link" href={screenshot.src} target="_blank" rel="noopener noreferrer" aria-label={screenshot.title + ' 원본 보기'}><img src={screenshot.src} alt={screenshot.title} width="1400" height="900" loading="lazy" decoding="async" /></a>
+              <a className="screenshot-link" href={screenshot.src} target="_blank" rel="noopener noreferrer" aria-label={screenshot.title + ' 원본 보기'}><img src={screenshot.src} alt={screenshot.title} width={screenshot.width || 1400} height={screenshot.height || 900} loading="lazy" decoding="async" /></a>
               <figcaption><h3>{screenshot.title}</h3><p>{screenshot.caption}</p></figcaption>
             </figure>)}</div>
           </section>}
