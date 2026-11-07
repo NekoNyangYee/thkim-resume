@@ -148,6 +148,48 @@ export const projects: Project[] = [
       { label: 'Windows 앱 다운로드', url: 'https://github.com/NekoNyangYee/Paperkit/releases/latest' },
     ],
   },
+  {
+    slug: 'taehyun-devlog',
+    name: 'TaeHyun Devlog',
+    subtitle: '사용자와 데이터를 연결한 두 번째 기술 블로그',
+    image: '/projects/taehyun-devlog/thumbnail.png',
+    imageAlt: 'TaeHyun Devlog — 디자인부터 데이터까지 직접 만든 기술 블로그. 파란색 배경과 블로그 메인 화면을 담은 모니터 목업',
+    period: '2025.01 — 현재',
+    context: '개인 프로젝트 · 디자인·개발·배포',
+    roleDescription: '화면 디자인부터 프론트엔드 구현, Supabase 데이터베이스·인증 연동, 배포와 운영까지 직접 진행했습니다.',
+    summary: '마크다운 기반 첫 블로그에서 확장해, Supabase로 인증과 데이터베이스를 연결한 두 번째 기술 블로그입니다. 검색·댓글·좋아요·북마크 등 사용자 기능을 직접 구현했습니다.',
+    description: 'Next.js와 Supabase로 직접 설계·운영하는 개인 기술 블로그입니다. 아티클 탐색과 읽기 화면에 소셜 로그인, 댓글·답글, 좋아요와 북마크를 연결하고, 디자인부터 데이터 연동과 배포까지 전체 흐름을 구현했습니다.',
+    background: {
+      problem: '마크다운·Contentlayer 기반의 첫 블로그에서는 디자인과 콘텐츠 구성을 직접 제어할 수 있었습니다. 다만 로그인·댓글·북마크처럼 사용자 데이터가 필요한 기능을 확장하려면 화면 구현과 함께 인증, 데이터베이스, API 연동까지 다뤄야 했습니다.',
+      approach: '이 경험을 쌓기 위해 Supabase를 활용한 두 번째 블로그를 만들었습니다. PostgreSQL 기반 데이터베이스와 인증을 화면에 연결하고, 글을 탐색하고 읽은 뒤 반응을 남기는 흐름까지 직접 구현하며 풀스택 개발 경험을 넓혔습니다.',
+    },
+    technologies: ['Next.js', 'TypeScript', 'Supabase', 'TanStack Query'],
+    technologyGroups: [
+      { category: '프론트엔드', items: ['React', 'Next.js', 'TypeScript', 'Tailwind CSS', 'Radix UI'] },
+      { category: '데이터·인증·상태 관리', items: ['Supabase', 'PostgreSQL', 'Supabase Auth', 'TanStack Query', 'Zustand'] },
+      { category: '이미지·공유', items: ['Cloudinary', 'Satori', 'resvg'] },
+      { category: '개발·배포', items: ['Git', 'GitHub', 'Vercel'] },
+    ],
+    contributionsHeading: '주요 작업',
+    contributions: [
+      { title: '블로그 디자인과 화면 구성', description: '메인 캐러셀, 아티클 목록, 인기 글 사이드바와 본문 화면을 직접 디자인·구현했습니다. 화면 크기에 맞춰 레이아웃을 조정하고, UI 컴포넌트와 데이터 처리 로직을 분리해 기능을 확장하기 쉽게 구성했습니다.' },
+      { title: 'Supabase 데이터베이스와 인증 연동', description: '게시물·카테고리·댓글·북마크 데이터를 Supabase에 연결하고, Google·Kakao 소셜 로그인을 구현했습니다. 별도의 API 서버를 구축하지 않고 PostgreSQL 기반 데이터와 사용자 인증을 앱에서 활용하는 구조를 경험했습니다.' },
+      { title: '검색·카테고리 필터와 본문 탐색', description: '제목 기반 검색 모달과 카테고리 필터를 구현하고, 선택한 카테고리를 URL에 반영해 탐색 상태를 유지하도록 구성했습니다. 본문 제목에서 목차를 생성하고 읽는 위치와 연결해 긴 글에서도 필요한 내용을 찾기 쉽게 만들었습니다.' },
+      { title: '댓글·좋아요·북마크', description: '로그인한 사용자가 댓글과 답글을 작성하고, 글에 좋아요를 남기거나 북마크로 저장하도록 구현했습니다. 변경된 데이터는 TanStack Query 캐시에 반영하거나 관련 목록을 다시 조회해 화면을 갱신하도록 연결했습니다.' },
+      { title: '조회 데이터와 이미지 경량화', description: '목록 조회에서는 본문을 제외한 필드만 요청하고, 메인 화면에 페이지 단위 조회와 필요한 수만 가져오는 쿼리를 적용했습니다. Next.js 이미지 설정과 Cloudinary 변환으로 이미지 크기·형식을 조정하고, 서버 상태와 UI 상태를 나눠 관리했습니다.' },
+      { title: '동적 OG 이미지와 메타데이터', description: '아티클의 제목·카테고리·작성일로 Satori 기반 SVG를 생성하고 resvg로 PNG를 제공하도록 구현했습니다. 게시물별 메타데이터에 OG 이미지를 연결해 글을 공유할 때 해당 콘텐츠가 드러나도록 구성했습니다.' },
+    ],
+    screenshots: [
+      { src: '/projects/taehyun-devlog/screen-home.png', title: '블로그 메인', caption: '대표 아티클을 보여주는 캐러셀과 전체 아티클 목록, 인기 글 사이드바로 구성한 메인 화면입니다.', width: 1808, height: 912 },
+      { src: '/projects/taehyun-devlog/screen-article.png', title: '아티클 읽기와 목차', caption: '제목·작성일·카테고리와 본문을 보여주는 상세 화면입니다. 오른쪽 목차에서 원하는 문단으로 이동하고 현재 읽는 위치를 확인할 수 있습니다.', width: 1808, height: 912 },
+      { src: '/projects/taehyun-devlog/screen-articles.png', title: '아티클 목록과 카테고리', caption: '전체 아티클을 탐색하고, 카테고리를 선택해 관심 있는 주제의 글을 모아 볼 수 있는 목록 화면입니다.', width: 1808, height: 912 },
+      { src: '/projects/taehyun-devlog/screen-search.png', title: '제목으로 아티클 검색', caption: '현재 화면에서 검색 모달을 열어 키워드가 포함된 아티클을 찾고, 검색 결과에서 바로 글로 이동할 수 있습니다.', width: 1808, height: 912 },
+    ],
+    links: [
+      { label: '블로그 방문', url: 'https://thkim.localplayer.dev' },
+      { label: 'GitHub 저장소', url: 'https://github.com/NekoNyangYee/taehyun-devlog' },
+    ],
+  },
 ]
 
 export const research: ResearchEntry[] = [
